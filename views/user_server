@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>UniqueGamer</title>
+  <link rel="shortcut icon" href="/download--2-.jpg" type="image/gif">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  
+  </script>
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+    
+      <span class="ml-3 text-xl">UniqueGamer</span>
+    </a>
+    
+<!--     <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a href='https://dsc.gg/Unique-Gamer'>discord</a> </button> -->
+<!--       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    </button> -->
+    
+  </div>
+  <div>
+    
+  </div>
+</header>
+  <style>
+		.animated {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.animated.faster {
+			-webkit-animation-duration: 500ms;
+			animation-duration: 500ms;
+		}
+
+		.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity: 1;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+	</style>
+
+  <!-- <dialog data-modal tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div>
+      Welcome to the dashboard of UniqueGamer discord bot. The dashboard is like a settings app of the bot. Select a server to get started.
+    </div>
+    <button data-close-modal> Ok</button>
+  </dialog>
+  <script>
+    const closeButton = document.querySelector("[data-close-modal]")
+      const modal = document.querySelector("[data-modal]")
+        modal.showModal()
+
+          closeButton.addEventListener("click", () => {
+            modal.close()
+          })
+            </script> -->
+  <dialog data-modal class="rounded-t-3xl rounded-b-3xl">
+    
+
+    <h1 class="ml-3 text-xl ">Welcome to the dashboard</h1>
+
+    <p class="mb-0 mt-0 text-base font-light leading-relaxed">
+  Welcome to the dashboard of UniqueGamer discord bot. The dashboard is like a settings app for the bot. customise commands and bot according to your needs here.
+</p>
+
+    
+
+    
+    <!-- <button type="button" data-action="modal#close" class="absolute top-4 right-4">X</button> -->
+
+    <hr class="mb-4">
+
+    
+
+      <button data-close-modal >Close</button>
+      
+    
+  </dialog>
+
+  <script>
+    const closeButton = document.querySelector("[data-close-modal]") 
+    const modal = document.querySelector("[data-modal]")
+    modal.showModal()
+  </script>
+
+  
+
+  
+    
+  <section>
+    <div>
+      <h2 class="text-2xl mt-4 text-gray-500 font-bold text-center">Welcome to dashboard. Please select a server to continue</h2>
+    </div>
+    <center>
+    <div>
+      <img src='' id="avatar" class="inline-block h-12 w-12 rounded-full ring-2 ring-white">
+      <div id="name">
+        
+      </div>
+    </div>
+    <a href='https://uniquegamer204.uniquegamer101.repl.co/dashboard' class="mr-5 hover:text-blue-900">logout</a>
+    </center>
+    <script src="https://smtpjs.com/v3/smtp.js">
+</script>
+    <script>
+      const DISCORD_API_BASE_URL = "https://discord.com/api/";
+      window.onload = () => {
+        const fragment = new URLSearchParams(window.location.hash.slice(1))
+        const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')]
+
+        function  generateRandomString() {
+          let randomString = ''
+          const randomNumber = Math.floor(Math.random() * 10)
+
+          for (let i = 0; i < 20 + randomNumber; i++) {
+            randomString += String.fromCharCode(33 + math.floor(Math.random() * 94));
+          }
+          return randomString
+        }
+
+        if(!accessToken){
+          const randomString = generateRandomString();
+          localStorage.setItem(`oauth-state`, randomString)
+          
+          window.location.href('https://uniquegamer204.uniquegamer101.repl.co/dashboard')
+        }
+        fetch('https://discord.com/api/users/@me', {
+          headers: {
+            authorization: `${tokenType} ${accessToken}`,
+          }
+        })
+        .then(result => result.json())
+        .then(response => {
+          const { username, discriminator, avatar, id, email} = response;
+
+          
+//set the welcome username string
+document.getElementById('name').innerText = ` ${username}#${discriminator}`;
+
+          function sendEmail() {
+	Email.send({
+	SecureToken: '6fa3a1c9-f35a-4afe-8ef2-1f5b48de63e3',
+	To : `${email}`,
+	From : "tech.uniquegamer@gmail.com",
+	Subject : "test",
+	Body : "hello",
+	}).then(
+		message => alert("mail sent successfully")
+	);
+}
+          sendEmail()
+
+          
+
+          
+
+          
+
+//set the avatar image by constructing a url to access discord's cdn
+document.getElementById("avatar").src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
+          
+        })
+
+        fetch('https://discord.com/api/users/@me', {
+          headers: {
+            authorization: `${tokenType} ${accessToken}`,
+          }
+        })
+       
+      }
+    </script>
+  </section>
+
+  
+  
+  <footer class="text-gray-600 body-font">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      </svg>
+      <span class="ml-3 text-xl">UniqueGamer</span>
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020-2023 UniqueGamer — all rights reserved
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <a class="text-gray-500">
+      </a>
+      <a class="ml-3 text-gray-500">
+      </a>
+    </span>
+  </div>
+</footer>
+  
+</body>
+
+</html>

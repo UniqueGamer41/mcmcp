@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>UniqueGamer</title>
+  <link rel="shortcut icon" href="/download--2-.jpg" type="image/gif">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <span class="ml-3 text-xl">UniqueGamer</span>
+    </a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <a href='https://uniquegamer204.uniquegamer101.repl.co/' class="mr-5 hover:text-blue-900">Home</a>
+      <a href='https://uniquegamer204.uniquegamer101.repl.co/commands' class="mr-5 hover:text-blue-900">Commands</a>
+      <a href='https://uniquegamer204.uniquegamer101.repl.co/dashboard' class="mr-5 hover:text-blue-900">Dashboard</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Download Framework Component -->
+<div class="container mx-auto px-5 py-10">
+  <div class="w-96 p-6 bg-gray-800 text-white rounded-lg shadow-lg mx-auto">
+    <h2 class="text-lg font-bold mb-4 text-center">Download Framework</h2>
+
+    <!-- Dropdown Menu -->
+    <div class="mb-4">
+      <label for="game-version" class="block text-sm mb-2">Select Game Version</label>
+      <select
+        id="game-version"
+        class="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+      >
+        <option value="" disabled selected>All Game Versions</option>
+        <option value="version1">Version 1.21.1</option>
+        <option value="version2">Version 1.20</option>
+        <option value="version3">Version 1.18.2</option>
+      </select>
+    </div>
+
+    <!-- Image Section -->
+    <div class="mb-4">
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Framework Thumbnail"
+        class="w-24 h-24 mx-auto rounded-md"
+      />
+    </div>
+
+    <!-- File Info -->
+    <div class="text-center mb-4">
+      <p class="text-sm font-semibold">MrCrayfish Vehicle mod port</p>
+      <p class="text-sm text-gray-400">Latest Release · Oct 14, 2024</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="space-y-3">
+      <button
+        class="w-full p-2 bg-indigo-600 hover:bg-indigo-700 rounded-lg text-sm font-semibold"
+        onclick="handleDownload('vm')"
+      >
+        Download Vehicle Mod port
+      </button>
+      <button
+        class="w-full p-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-semibold"
+        onclick="handleDownload('dependent1')"
+      >
+        Download Dependent 1
+      </button>
+      <button
+        class="w-full p-2 bg-green-600 hover:bg-green-700 rounded-lg text-sm font-semibold"
+        onclick="handleDownload('dependent2')"
+      >
+        Download Dependent 2
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // URLs for different downloads based on game version
+  const downloadLinks = {
+    vm: {
+      version1: "https://example.com/framework-1.21.1",
+      version2: "https://example.com/framework-1.20",
+      version3: "https://adfoc.us/867807107216406",
+    },
+    dependent1: {
+      version1: "https://example.com/dependent1-1.21.1",
+      version2: "https://example.com/dependent1-1.20",
+      version3: "https://example.com/dependent1-1.19.3",
+    },
+    dependent2: {
+      version1: "https://example.com/dependent2-1.21.1",
+      version2: "https://example.com/dependent2-1.20",
+      version3: "https://example.com/dependent2-1.19.3",
+    },
+  };
+
+  // JavaScript to handle redirection based on dropdown selection and button clicked
+  function handleDownload(type) {
+    const gameVersion = document.getElementById("game-version").value;
+    if (gameVersion) {
+      const downloadUrl = downloadLinks[type][gameVersion];
+      if (downloadUrl) {
+        window.location.href = downloadUrl;
+      } else {
+        alert("Download link not available for the selected game version.");
+      }
+    } else {
+      alert("Please select a game version.");
+    }
+  }
+</script>
+
+<footer class="text-gray-600 body-font">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+      <span class="ml-3 text-xl">UniqueGamer</span>
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020-2023 UniqueGamer — all rights reserved</p>
+  </div>
+</footer>
+</body>
+
+</html>
